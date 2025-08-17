@@ -1,0 +1,219 @@
+/* ---------------- GLOBAL ---------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  overflow: hidden; /* only app-container scrolls */
+}
+
+body {
+  background: url("https://e0.pxfuel.com/wallpapers/322/204/desktop-wallpaper-professional-blue-background-good-professional-young-professional-and-professional-blue-blur.jpg")
+              no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 15px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+/* ---------------- APP CONTAINER (Main Scroll Area) ---------------- */
+.app-container {
+  width: 50%;
+  max-width: 1000px;
+  padding: 30px 70px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #f5f5f5;
+}
+
+/* .app-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.app-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+} */
+
+h1 {
+  font-size: 2.5rem;
+  margin: 30px;
+  color: #e3f2fd;
+  letter-spacing: 2px;
+}
+
+/* ---------------- FORM ---------------- */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 18px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex: 1;
+  min-width: 140px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  margin-left: 8px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.form-container input,
+.form-container select {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 20px;
+  background: rgba(30, 30, 30, 0.85);
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-container .form-group #add-task-btn {
+  background: linear-gradient(250deg, #2196f3, #830ef0);
+  color: #fff;
+  border: none;
+  padding: 20px 30px;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: auto;
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.form-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------------- TASK SECTIONS ---------------- */
+.task-section {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.task-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  border-left: 5px solid #64b5f6;
+  padding-left: 10px;
+  color: #bbdefb;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  border-radius: 6px;
+  padding: 8px 10px;
+  z-index: 5;
+}
+
+/* ---------------- TASK CARD ---------------- */
+.task-card {
+  background: rgba(30, 30, 30, 0.85);
+  margin-bottom: 18px;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.task-card:hover {
+  transform: scale(1.02);
+}
+
+.task-card h3 {
+  margin: 0 0 8px;
+  color: #fff;
+}
+
+.task-card p {
+  margin: 5px 0;
+  color: #ddd;
+}
+
+.task-card small {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* ---------------- TASK ACTIONS ---------------- */
+.task-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.task-actions button {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.task-actions button:hover {
+  transform: scale(1.07);
+  opacity: 0.9;
+}
+
+button.done-btn {
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: white;
+}
+
+button.delete-btn {
+  background: linear-gradient(135deg, #dc3545, #b02a37);
+  color: white;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 900px) {
+  .form-container {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+}
+
+/* ---------------- HIGHLIGHT ANIMATION FOR NEW TASK ---------------- */
+@keyframes flash {
+  0%, 100% { background-color: transparent; }
+  25%, 75% { background-color: #ffff99; }
+  50% { background-color: transparent; }
+}
+
+.highlight {
+  animation: flash 2s ease-out 0s 2;
+}
+

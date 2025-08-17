@@ -1,0 +1,4 @@
+com\example\TaskAPIwithJPA\Controller\TaskController.class
+com\example\TaskAPIwithJPA\TaskApIwithJpaApplication.class
+com\example\TaskAPIwithJPA\Repo\TaskRepo.class
+com\example\TaskAPIwithJPA\Entity\Task.class
